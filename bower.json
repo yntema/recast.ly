@@ -1,0 +1,21 @@
+{
+  "name": "recast.ly",
+  "version": "1.0.0",
+  "authors": [
+    "Hack Reactor <curriculum.team@hackreactor.com>"
+  ],
+  "main": "",
+  "dependencies": {
+    "react": "~0.14.6",
+    "jquery": "~2.2.0",
+    "lodash": "~4.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}
