@@ -19,15 +19,18 @@ class App extends React.Component {
     this.state = {
       currentlyPlaying: window.emptyVideoList[0],
       videoList: window.emptyVideoList,
-      searchQuery: ''
+      searchQuery: '',
+      lastCalled: undefined
     }
   }
 
   searchAndUpdateState (queryObject) {
+    if(this.state.lastCalled && Date.now() - this.state.lastCalled <400) return
     searchYouTube(queryObject, function (results) {
       var getFirstOrSecondVideoObject = results.items[0].id.videoId ? results.items[0] : results.items[1]
       this.setState({currentlyPlaying: getFirstOrSecondVideoObject,
-                     videoList: results.items})
+                     videoList: results.items,
+                     lastCalled: Date.now()})
     }.bind(this))
   }
 
