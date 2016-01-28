@@ -2,8 +2,8 @@
 // when searching with the query "react tutorial"
 window.exampleVideoData = [
   {
-    "kind": "youtube#searchResult",
-    "etag": "\"abQHWywil_AkNqdqji7_FqiK-u4/Ykxo_CqKu8F8kcm-iNgL332gQTY\"",
+    "kind": "",
+    "etag": "332gQTY\"",
     "id": {
       "kind": "youtube#video",
       "videoId": "4ZAEBxGipoA"
