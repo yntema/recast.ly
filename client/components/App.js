@@ -17,18 +17,29 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      currentlyPlaying: '4ZAEBxGipoA',
-      videoList: exampleVideoData
+      currentlyPlaying: '',
+      videoList: window.emptyVideoList
     }
     this.onClickVideoTitle = this.onClickVideoTitle.bind(this)
   }
+
+  componentDidMount () {
+     searchYouTube({query:'testquery', max:10, key:YOUTUBE_API_KEY, part:'snippet'}, function (results) {
+      this.setState({currentlyPlaying: results.items[0].id.videoId,
+                     videoList: results})
+      console.log(results.items);
+     }.bind(this))
+   }
+
+
+
   
   onClickVideoTitle (videoId) {
     this.setState({currentlyPlaying: videoId})
-    console.log(videoId, this.state)
   }
 
   render(){
+      
     return (<div>
               <Nav />
               <div className="col-md-7">

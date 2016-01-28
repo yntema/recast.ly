@@ -14,12 +14,10 @@ class VideoList extends React.Component {
     }
 
     render() {
+        // this.props.videoList = this.props.videoList || exampleVideoData[0];
+        console.log(this.props, "vidoelist")
         return (<div className="video-list media">
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={exampleVideoData[0]}/>
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={exampleVideoData[1]}/>
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={exampleVideoData[2]}/>
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={exampleVideoData[3]}/>
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={exampleVideoData[4]}/>
+                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={this.props.videoList}/>
                 </div>)
     }
 }
