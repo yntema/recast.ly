@@ -19,6 +19,7 @@ class App extends React.Component {
     this.state = {
       currentlyPlaying: window.emptyVideoList[0],
       videoList: window.emptyVideoList,
+      searchQuery: ''
     }
   }
 
@@ -42,11 +43,9 @@ class App extends React.Component {
 
 
   searchOnKeyUp (event) {
-    console.log(event)
-    // this.setState( {
-    //   currentlyPlaying: 
-    //   videolist:
-    // })
+    this.setState({searchQuery: event.target.value})
+    var newQueryObject = {q:event.target.value, max: 10, key:YOUTUBE_API_KEY, part:'snippet'}
+    this.searchAndUpdateState(newQueryObject)
   }  
 
   searchOnButtonClick (event) {
