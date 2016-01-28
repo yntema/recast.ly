@@ -17,32 +17,46 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      currentlyPlaying: '',
-      videoList: window.emptyVideoList
+      currentlyPlaying: window.emptyVideoList[0],
+      videoList: window.emptyVideoList,
     }
-    console.log(window.emptyVideoList);
-    // this.onClickVideoTitle = this.onClickVideoTitle.bind(this)
+  }
+
+  searchAndUpdateState (queryObject) {
+    searchYouTube(queryObject, function (results) {
+      var getFirstOrSecondVideoObject = results.items[0].id.videoId ? results.items[0] : results.items[1]
+      this.setState({currentlyPlaying: getFirstOrSecondVideoObject,
+                     videoList: results.items})
+    }.bind(this))
   }
 
   componentDidMount () {
-     searchYouTube({query:'testquery', max:10, key:YOUTUBE_API_KEY, part:'snippet'}, function (results) {
-      this.setState({currentlyPlaying: results.items[0].id.videoId,
-                     videoList: results.items})
-      console.log(results.items);
-     }.bind(this))
+     this.searchAndUpdateState({q:'Jimmy Fallon', max:10, key:YOUTUBE_API_KEY, part:'snippet'})
    }
 
 
+  onClickVideoTitle (videoObj) {
+    this.setState({currentlyPlaying: videoObj})
+  }
 
-  
-  onClickVideoTitle (videoId) {
-    this.setState({currentlyPlaying: videoId})
+
+
+  searchOnKeyUp (event) {
+    console.log(event)
+    // this.setState( {
+    //   currentlyPlaying: 
+    //   videolist:
+    // })
+  }  
+
+  searchOnButtonClick (event) {
+
   }
 
   render(){
       
     return (<div>
-              <Nav />
+              <Nav searchOnKeyUp={this.searchOnKeyUp.bind(this)}/>
               <div className="col-md-7">
                 <VideoPlayer video={this.state.currentlyPlaying}/>
               </div>

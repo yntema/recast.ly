@@ -14,11 +14,9 @@ class VideoList extends React.Component {
     }
 
     render() {
-        console.log(this.props.videolist)
         var videoNodes = this.props.videolist.map(video => {return (
                           <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={video}/>
                         )})
-        console.log(this.props.videolist, "videolist");
         return (<div className="video-list media">
                 {videoNodes}
                 </div>)
