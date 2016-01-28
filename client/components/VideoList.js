@@ -15,9 +15,9 @@ class VideoList extends React.Component {
 
     render() {
         // this.props.videoList = this.props.videoList || exampleVideoData[0];
-        console.log(this.props, "vidoelist")
+        console.log(this.props.videolist, "videolist")
         return (<div className="video-list media">
-                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={this.props.videoList}/>
+                  <VideoListEntry onClickVideoTitle={this.props.onClickVideoTitle} entry={this.props.videolist[0]}/>
                 </div>)
     }
 }

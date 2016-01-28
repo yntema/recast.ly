@@ -8,7 +8,7 @@ window.emptyVideoList =[{
     "snippet": {
       "publishedAt": "",
       "channelId": "",
-      "title": "",
+      "title": "test",
       "description": "",
       "thumbnails": {
         "default": {

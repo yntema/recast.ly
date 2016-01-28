@@ -20,13 +20,14 @@ class App extends React.Component {
       currentlyPlaying: '',
       videoList: window.emptyVideoList
     }
-    this.onClickVideoTitle = this.onClickVideoTitle.bind(this)
+    console.log(window.emptyVideoList);
+    // this.onClickVideoTitle = this.onClickVideoTitle.bind(this)
   }
 
   componentDidMount () {
      searchYouTube({query:'testquery', max:10, key:YOUTUBE_API_KEY, part:'snippet'}, function (results) {
       this.setState({currentlyPlaying: results.items[0].id.videoId,
-                     videoList: results})
+                     videoList: results.items})
       console.log(results.items);
      }.bind(this))
    }
@@ -46,7 +47,7 @@ class App extends React.Component {
                 <VideoPlayer video={this.state.currentlyPlaying}/>
               </div>
               <div className="col-md-5">
-                <VideoList onClickVideoTitle={this.onClickVideoTitle} videolist={this.state.videoList}/>
+                <VideoList onClickVideoTitle={this.onClickVideoTitle.bind(this)} videolist={this.state.videoList}/>
               </div>
             </div>)
   }
