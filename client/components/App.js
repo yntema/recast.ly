@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-     this.searchAndUpdateState({q:'Jimmy Fallon', maxResults:5,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'})
+     this.searchAndUpdateState({q:'Jimmy Fallon', maxResults:8,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'})
    }
 
 
@@ -49,7 +49,7 @@ class App extends React.Component {
 
   searchOnKeyUp (event) {
     this.setState({searchQuery: event.target.value})
-    var newQueryObject = {q:event.target.value, maxResults: 5,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'}
+    var newQueryObject = {q:event.target.value, maxResults: 8,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'}
     this.searchAndUpdateState(newQueryObject)
   }  
 

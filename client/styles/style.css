@@ -76,3 +76,10 @@ body {
   font-weight: 800;
 }
 
+.videoLikes{
+  padding: 20px 5px 5px 5px;
+}
+.viewCount {
+  padding: 5px 5px 5px 5px;
+}
+
