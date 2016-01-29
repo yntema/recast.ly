@@ -11,7 +11,7 @@ class VideoPlayer extends React.Component {
                   <iframe className="embed-responsive-item" src={videoSource} allowFullScreen></iframe>
                 </div>
                 <div className="video-player-details">
-                  <VideoDetails videoInfo={this.props.video.snippet}/>
+                  <VideoDetails videoInfo={this.props.video.snippet} videoDetails={this.props.videoDetails}/>
                 </div>
             </div>)
   }

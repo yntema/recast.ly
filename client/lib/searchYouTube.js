@@ -1,8 +1,8 @@
-var searchYouTube = (options, callback) => {
+var searchYouTube = (options, callback, url) => {
 
   $.ajax({
     // This is the url you should use to communicate with the parse API server.
-    url: 'https://www.googleapis.com/youtube/v3/search',
+    url: url || 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
     data: options,
 
