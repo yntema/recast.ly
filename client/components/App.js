@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-     this.searchAndUpdateState({q:'Jimmy Fallon', maxResults:8,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'})
+     this.searchAndUpdateState({q:'angularjs', maxResults:8,videoEmbeddable:true, type:'video', key:YOUTUBE_API_KEY, part:'snippet'})
    }
 
 

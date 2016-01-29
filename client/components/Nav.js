@@ -15,7 +15,8 @@ class Nav extends React.Component {
   render () {
     return (<nav className="navbar">
               <div className="col-md-6 col-md-offset-3">
-                <Search searchOnKeyUp={this.props.searchOnKeyUp}/>
+                <span className='pageTitle'>{'Recastly'}</span>
+                <Search className='searchBar' searchOnKeyUp={this.props.searchOnKeyUp}/>
               </div>
             </nav>)
   }

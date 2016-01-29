@@ -2,6 +2,7 @@
 
 body {
   background: #f1f1f1;
+  font-family: 'Helvetica Neue'
 }
 
 .navbar {
@@ -17,6 +18,8 @@ body {
 .search-bar {
   border-radius: 1px;
   background: #fff;
+  display: inline;
+  float: right;
 }
 
 .search-bar .form-control {
@@ -72,14 +75,22 @@ body {
 }
 
 .videoPublished {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
 }
 
 .videoLikes{
-  padding: 20px 5px 5px 5px;
+  padding: 5px;
 }
 .viewCount {
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
+
+.videoDescription {
+  padding: 20px 0 20px 0;
+  font-size: 14px;
+}
+
+.pageTitle { display:inline; color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
 
