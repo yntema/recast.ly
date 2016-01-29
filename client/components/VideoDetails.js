@@ -10,9 +10,9 @@ class VideoDetails extends React.Component {
               <div className='videoDescription'>{this.props.videoInfo.description}</div>
               <div className='videoLikes'>
                 <span className='glyphicon glyphicon-thumbs-up'></span>
-                  {' '+this.props.videoDetails.items[0].statistics.likeCount+' '}
+                  {' '+(this.props.videoDetails.items[0].statistics.likeCount || 0)+' '} 
                 <span className='glyphicon glyphicon-thumbs-down'></span>
-                  {' '+this.props.videoDetails.items[0].statistics.dislikeCount}
+                  {' '+(this.props.videoDetails.items[0].statistics.dislikeCount || 0)}
               </div>
               <div className='viewCount'>
                 <span className='glyphicon glyphicon-signal'></span>
